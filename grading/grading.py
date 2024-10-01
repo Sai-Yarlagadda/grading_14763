@@ -11,7 +11,7 @@ import pandas as pd
 import requests
 from zipfile import ZipFile
 import fitz
-
+  
 
 def get_last_push_time(repo_url):
     repo_dir = tempfile.mkdtemp()
@@ -22,7 +22,6 @@ def get_last_push_time(repo_url):
         repo = git.Repo.clone_from(
             repo_url, 
             repo_dir, 
-            # env={'GIT_ASKPASS': 'echo', 'GIT_USERNAME': GITHUB_USERNAME, 'GIT_PASSWORD': GITHUB_TOKEN}
         )
         tree = repo.tree()
         latest_commit_time = None
